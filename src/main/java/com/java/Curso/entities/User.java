@@ -3,14 +3,27 @@ package com.java.Curso.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class User implements Serializable {
+import javax.annotation.processing.Generated;
 
+
+
+@Entity
+@Table(name = "tb_users")
+public class User implements Serializable {
+   private static final long serialVersionUID = 1L;
 	
-	private static final long serialVersionUID = 1L;
-	private long Id;
+	
+	@Id
+	@Generated(value = "{IDENTITY}")
+	
+	private Long Id;
+	@Column(name = "name")
 	private String name;
+	@Column(name = "email")
 	private String email;
+	@Column(name = "phone")
 	private String phone;
+	@Column(name = "password")
 	private String password;
 	
 	
